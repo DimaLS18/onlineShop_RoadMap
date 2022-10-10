@@ -8,45 +8,72 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    private enum Constants {
+        static let laptopAndPhoneImageName = "laptopcomputer.and.iphone"
+        static let laptopAndPhoneTitle = "Купить"
+        static let personImageName = "person.circle"
+        static let personTitle = "Для вас"
+        static let searchTitle = "Поиск"
+        static let searchImageName = "magnifyingglass"
+        static let backetImageName = "bag"
+        static let backetTitle = "Корзина"
+    }
 
     var window: UIWindow?
 
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+         guard let scene = (scene as? UIWindowScene) else { return }
+         window = UIWindow(windowScene: scene)
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+         let tabBar = UITabBarController()
+
+         let buyViewController = UINavigationController(rootViewController: BuyViewController())
+         let forYouViewController = UINavigationController(rootViewController: ForYouViewController())
+         let searchViewController = UINavigationController(rootViewController: SearchViewController())
+         let backetViewContoller = UINavigationController(rootViewController: BasketViewController())
+
+        createTabBarItem(viewController: buyViewController,
+                         title: Constants.laptopAndPhoneTitle,
+                         nameImage: Constants.laptopAndPhoneImageName,
+                         tag: 0
+        )
+
+        createTabBarItem(viewController: forYouViewController,
+                         title: Constants.personTitle,
+                         nameImage: Constants.personImageName,
+                         tag: 1
+        )
+
+        createTabBarItem(viewController: searchViewController,
+                         title: Constants.searchTitle,
+                         nameImage: Constants.searchImageName,
+                         tag: 3
+        )
+
+        createTabBarItem(viewController: backetViewContoller,
+                         title: Constants.backetTitle,
+                         nameImage: Constants.backetImageName,
+                         tag: 4
+        )
+
+         tabBar.setViewControllers(
+             [buyViewController, forYouViewController, searchViewController, backetViewContoller],
+             animated: false
+         )
+
+         tabBar.tabBar.unselectedItemTintColor = .gray
+         tabBar.tabBar.backgroundColor = UIColor(red: 0.07, green: 0.07, blue: 0.07, alpha: 1.00)
+
+         window?.rootViewController = tabBar
+         window?.makeKeyAndVisible()
     }
 
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+    func createTabBarItem(viewController: UIViewController, title: String, nameImage: String, tag: Int) {
+        viewController.tabBarItem = UITabBarItem(
+            title: title, image: UIImage(systemName: nameImage,
+                                             withConfiguration: UIImage.SymbolConfiguration(weight: .medium)), tag: tag
+        )
     }
-
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-    }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
-    }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
-
-
 }
-
