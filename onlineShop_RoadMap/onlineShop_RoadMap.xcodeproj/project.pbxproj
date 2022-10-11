@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2D82ABE928F435FF00D9B949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABE828F435FF00D9B949 /* AppDelegate.swift */; };
 		2D82ABEB28F435FF00D9B949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */; };
-		2D82ABED28F435FF00D9B949 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABEC28F435FF00D9B949 /* ViewController.swift */; };
 		2D82ABF228F435FF00D9B949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D82ABF128F435FF00D9B949 /* Assets.xcassets */; };
 		2D82ABF528F435FF00D9B949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D82ABF328F435FF00D9B949 /* LaunchScreen.storyboard */; };
 		2D82AC0428F437E500D9B949 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABFE28F437E500D9B949 /* BuyViewController.swift */; };
@@ -18,13 +17,13 @@
 		2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0128F437E500D9B949 /* MainTabBarController.swift */; };
 		2D82AC0828F437E500D9B949 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0228F437E500D9B949 /* ProductViewController.swift */; };
 		2D82AC0928F437E500D9B949 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0328F437E500D9B949 /* BasketViewController.swift */; };
+		2DE19D4A28F5528C008507FF /* AssetsColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE19D4928F5528C008507FF /* AssetsColor.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D82ABE528F435FF00D9B949 /* onlineShop_RoadMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onlineShop_RoadMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D82ABE828F435FF00D9B949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D82ABEC28F435FF00D9B949 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2D82ABF128F435FF00D9B949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D82ABF428F435FF00D9B949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D82ABF628F435FF00D9B949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		2D82AC0128F437E500D9B949 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2D82AC0228F437E500D9B949 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		2D82AC0328F437E500D9B949 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		2DE19D4928F5528C008507FF /* AssetsColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsColor.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +69,8 @@
 				2D82ABFD28F437CD00D9B949 /* Controllers */,
 				2D82ABE828F435FF00D9B949 /* AppDelegate.swift */,
 				2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */,
-				2D82ABEC28F435FF00D9B949 /* ViewController.swift */,
 				2D82ABF128F435FF00D9B949 /* Assets.xcassets */,
+				2DE19D4928F5528C008507FF /* AssetsColor.xcassets */,
 				2D82ABF328F435FF00D9B949 /* LaunchScreen.storyboard */,
 				2D82ABF628F435FF00D9B949 /* Info.plist */,
 			);
@@ -150,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D82ABF528F435FF00D9B949 /* LaunchScreen.storyboard in Resources */,
+				2DE19D4A28F5528C008507FF /* AssetsColor.xcassets in Resources */,
 				2D82ABF228F435FF00D9B949 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,7 +185,6 @@
 			files = (
 				2D82AC0928F437E500D9B949 /* BasketViewController.swift in Sources */,
 				2D82AC0528F437E500D9B949 /* SearchViewController.swift in Sources */,
-				2D82ABED28F435FF00D9B949 /* ViewController.swift in Sources */,
 				2D82AC0628F437E500D9B949 /* ForYouViewController.swift in Sources */,
 				2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */,
 				2D82AC0428F437E500D9B949 /* BuyViewController.swift in Sources */,

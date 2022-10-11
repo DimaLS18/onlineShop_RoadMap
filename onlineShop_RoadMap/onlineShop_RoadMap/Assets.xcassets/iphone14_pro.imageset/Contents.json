@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "iphone_14_pro_finish_select_202209_6_1inch_deeppurple_PhotoRoom-_1_.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
