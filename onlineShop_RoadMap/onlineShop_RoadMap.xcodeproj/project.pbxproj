@@ -17,7 +17,9 @@
 		2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0128F437E500D9B949 /* MainTabBarController.swift */; };
 		2D82AC0828F437E500D9B949 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0228F437E500D9B949 /* ProductViewController.swift */; };
 		2D82AC0928F437E500D9B949 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82AC0328F437E500D9B949 /* BasketViewController.swift */; };
-		2DE19D4A28F5528C008507FF /* AssetsColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DE19D4928F5528C008507FF /* AssetsColor.xcassets */; };
+		2DED0EF228F68CFF00111A73 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED0EF128F68CFF00111A73 /* Product.swift */; };
+		2DED0EF428F6905600111A73 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DED0EF328F6905600111A73 /* ColorAssets.xcassets */; };
+		2DED0EF628F6905F00111A73 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DED0EF528F6905F00111A73 /* ColorEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,9 @@
 		2D82AC0128F437E500D9B949 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		2D82AC0228F437E500D9B949 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		2D82AC0328F437E500D9B949 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
-		2DE19D4928F5528C008507FF /* AssetsColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsColor.xcassets; sourceTree = "<group>"; };
+		2DED0EF128F68CFF00111A73 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		2DED0EF328F6905600111A73 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		2DED0EF528F6905F00111A73 /* ColorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +70,12 @@
 		2D82ABE728F435FF00D9B949 /* onlineShop_RoadMap */ = {
 			isa = PBXGroup;
 			children = (
+				2DED0EF728F691C700111A73 /* Model */,
 				2D82ABFD28F437CD00D9B949 /* Controllers */,
 				2D82ABE828F435FF00D9B949 /* AppDelegate.swift */,
 				2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */,
+				2DED0EF328F6905600111A73 /* ColorAssets.xcassets */,
 				2D82ABF128F435FF00D9B949 /* Assets.xcassets */,
-				2DE19D4928F5528C008507FF /* AssetsColor.xcassets */,
 				2D82ABF328F435FF00D9B949 /* LaunchScreen.storyboard */,
 				2D82ABF628F435FF00D9B949 /* Info.plist */,
 			);
@@ -88,6 +93,15 @@
 				2D82ABFF28F437E500D9B949 /* SearchViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2DED0EF728F691C700111A73 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DED0EF128F68CFF00111A73 /* Product.swift */,
+				2DED0EF528F6905F00111A73 /* ColorEnum.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D82ABF528F435FF00D9B949 /* LaunchScreen.storyboard in Resources */,
-				2DE19D4A28F5528C008507FF /* AssetsColor.xcassets in Resources */,
+				2DED0EF428F6905600111A73 /* ColorAssets.xcassets in Resources */,
 				2D82ABF228F435FF00D9B949 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,7 +199,9 @@
 			files = (
 				2D82AC0928F437E500D9B949 /* BasketViewController.swift in Sources */,
 				2D82AC0528F437E500D9B949 /* SearchViewController.swift in Sources */,
+				2DED0EF228F68CFF00111A73 /* Product.swift in Sources */,
 				2D82AC0628F437E500D9B949 /* ForYouViewController.swift in Sources */,
+				2DED0EF628F6905F00111A73 /* ColorEnum.swift in Sources */,
 				2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */,
 				2D82AC0428F437E500D9B949 /* BuyViewController.swift in Sources */,
 				2D82ABE928F435FF00D9B949 /* AppDelegate.swift in Sources */,
