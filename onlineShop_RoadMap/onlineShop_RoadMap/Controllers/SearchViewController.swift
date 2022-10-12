@@ -8,231 +8,283 @@ import UIKit
 /// Экран поиска
 final class SearchViewController: UIViewController {
     private enum Constants {
-        static let search = "Поиск"
-        static let magnifyingglass = "magnifyingglass"
-        static let blackCase = "Чехол Incase Flat для MacBook Pro 16 дюймов"
-        static let watch = "Спортивный ремешок Black Unity"
-        static let brownCase = "Кожаный чехол MacBook Pro, 16 дюймов"
-        static let recently = "Недавно просмотренные"
-        static let variants = "Варианты запросов"
-        static let airpods = "AirPods"
-        static let appleCare = "AppleCare"
-        static let beats = "Beats"
-        static let compare = "Cравнение модели iPhone"
-        static let clear = "Очистить"
-        static let searchProduct = " Поиск по продуктам и магазинам"
-        static let blackImage = "Image"
-        static let strapImage = "4"
-        static let brownCaseImg = "2"
+        static let searchLabelText = "Поиск"
+        static let searchTextFieldPlaceholderText = "Поиск по продуктам и магазинам"
+        static let recentlyViewedLabelText = "Недавно просмотренные"
+        static let cleanButtonTitleText = "Очистить"
+        static let requestOptionsLabelText = "Варианты запросов"
+        static let blackCaseLabelText = "Чехол Incase Flat для MacBook Pro 16 дюймов"
+        static let watchbandLabelText = "Спортивный ремешок Black Unity"
+        static let brownCaseLabelText = "Кожаный чехол для MacBook Pro 16 дюймов, коричневый"
+        static let iPhoneCaseLabelText = "Iphone 14 pro фиолетовый цыет"
+        static let airPodsLabelText = "AirPods"
+        static let appleCareLabelText = "AppleCare"
+        static let beatsLabelText = "Beats"
+        static let iphoneLabelText = "Сравнение модели iPhone"
+        static let blackCasePrice = "3 990.00 руб"
+        static let brownCasePrice = "4 990.00 руб"
+        static let watchbandPrice = "1 200.00 руб"
+        static let iPhonePrice = "89 900.00 руб"
     }
-
-    // MARK: - Private Visual Components
-    private lazy var searchLabel: UILabel = {
+    // MARK: - Visual Component
+    private let searchLabel: UILabel = {
         let label = UILabel()
+        label.text = Constants.searchLabelText
+        label.textColor = UIColor(named: Color.textColor)
         label.font = .boldSystemFont(ofSize: 30)
-        label.frame = CGRect(x: 5, y: 80, width: 140, height: 75)
-        label.textColor = .white
-        label.text = Constants.search
-
+        label.frame = CGRect(x: 20, y: 100, width: 90, height: 50)
         return label
     }()
 
-    private lazy var recentlyLabel: UILabel = {
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = Constants.searchTextFieldPlaceholderText
+        searchBar.frame = CGRect(x: 10, y: 150, width: 380, height: 30)
+        return searchBar
+    }()
+
+    private let recentlyViewedLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
-        label.frame = CGRect(x: 5, y: 200, width: 300, height: 75)
-        label.textColor = .white
-        label.text = Constants.recently
-
+        label.text = Constants.recentlyViewedLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .boldSystemFont(ofSize: 20)
+        label.frame = CGRect(x: 20, y: 200, width: 300, height: 50)
         return label
     }()
 
-    private lazy var variantsLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 24)
-        label.frame = CGRect(x: 5, y: 435, width: 300, height: 75)
-        label.textColor = .white
-        label.text = Constants.variants
-
-        return label
-    }()
-
-    private lazy var clearButton: UIButton = {
+    private let cleanButton: UIButton = {
         let button = UIButton()
-        button.setTitle(Constants.clear, for: .normal)
-        button.setTitleColor(UIColor(
-            red: 4/255, green: 140/255, blue: 224/255, alpha: 1.0
-        ), for: .normal)
-        button.frame = CGRect(x: 300, y: 203, width: 100, height: 75)
-
+        button.setTitle(Constants.cleanButtonTitleText, for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.frame = CGRect(x: 280, y: 211, width: 90, height: 30)
         return button
     }()
 
-    private lazy var searchTextField: UITextField = {
-        let textField = UITextField()
-        textField.textColor = UIColor(red: 0.5882, green: 0.5882, blue: 0.5882, alpha: 1.0)
-        textField.attributedPlaceholder = NSAttributedString(
-            string: Constants.searchProduct,
-            attributes: [NSAttributedString.Key.foregroundColor:
-                            UIColor(red: 0.5882, green: 0.5882, blue: 0.5882, alpha: 1.0)
-                        ]
-        )
-
-        let imageView = UIImageView(image: UIImage(systemName: Constants.magnifyingglass))
-        imageView.tintColor = UIColor(red: 0.5882, green: 0.5882, blue: 0.5882, alpha: 1.0)
-        textField.leftView = imageView
-        textField.leftViewMode = .always
-        textField.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.00)
-        textField.frame = CGRect(x: 5, y: 150, width: 380, height: 40)
-        textField.layer.cornerRadius = 10
-        return textField
+    private lazy var productScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor(named: Color.blackColor)
+        scrollView.frame = CGRect(x: 0, y: 250, width: self.view.bounds.width, height: 210)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height: 210)
+        scrollView.showsHorizontalScrollIndicator = false
+        return scrollView
     }()
+
+    private let requestOptionsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.requestOptionsLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .boldSystemFont(ofSize: 24)
+        label.frame = CGRect(x: 20, y: 470, width: 300, height: 50)
+        return label
+    }()
+
+    private let airPodsSearchView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.frame = CGRect(x: 20, y: 520, width: 350, height: 50)
+        return view
+    }()
+
+    private let airPodsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.airPodsLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .systemFont(ofSize: 20)
+        label.frame = CGRect(x: 50, y: 10, width: 300, height: 50)
+        return label
+    }()
+
+    private let glassForAirPodsButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .systemGray
+        button.contentMode = .scaleAspectFit
+        button.frame = CGRect(x: 20, y: 25, width: 20, height: 20)
+        return button
+    }()
+
+    private let appleCareSearchView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: Color.blackColor)
+        view.frame = CGRect(x: 20, y: 570, width: 350, height: 50)
+        return view
+    }()
+
+    private let appleCareLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.appleCareLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .systemFont(ofSize: 20)
+        label.frame = CGRect(x: 50, y: 10, width: 300, height: 50)
+        return label
+    }()
+
+    private let glassForAppleCareButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .gray
+        button.frame = CGRect(x: 20, y: 25, width: 20, height: 20)
+        return button
+    }()
+
+    private let beatsSearchView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: Color.blackColor)
+        view.frame = CGRect(x: 20, y: 620, width: 350, height: 50)
+        return view
+    }()
+
+    private let beatsLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.beatsLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .systemFont(ofSize: 20)
+        label.frame = CGRect(x: 50, y: 10, width: 300, height: 50)
+        return label
+    }()
+
+    private let glassBeatsButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .gray
+        button.frame = CGRect(x: 20, y: 25, width: 20, height: 20)
+        return button
+    }()
+
+    private let iPhoneSearchView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: Color.blackColor)
+        view.frame = CGRect(x: 20, y: 670, width: 350, height: 50)
+        return view
+    }()
+
+    private let iPhoneLabel: UILabel = {
+        let label = UILabel()
+        label.text = Constants.iphoneLabelText
+        label.textColor = UIColor(named: Color.textColor)
+        label.font = .systemFont(ofSize: 20)
+        label.frame = CGRect(x: 50, y: 10, width: 300, height: 50)
+        return label
+    }()
+
+    private let glassIPhoneButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .gray
+        button.frame = CGRect(x: 20, y: 25, width: 20, height: 20)
+        return button
+    }()
+
+    // MARK: - Private property
+
+    var products = [Product(name: "Чехол Incase Flat для MacBook Pro 16 дюймов",
+                            imageName: ["caseBlack", "caseBlack2", "caseBlack3"],
+                            price: "3 990.00 руб"),
+                    Product(name: "Кожаный чехол для MacBook Pro 16 дюймов, коричневый",
+                            imageName: ["caseBrown", "caseBrown2", "caseBrown3"],
+                            price: "4 990.00 руб"),
+                    Product(name: "Спортивный ремешок Black Unity",
+                            imageName: ["clock", "clock1"],
+                            price: "1 200.00 руб"),
+                    Product(name: "Iphone 14 pro ",
+                            imageName: ["iphone14_pro", "iphone14_pro1", "iphone14_pro2"],
+                            price: "99 900.00 руб") ]
+
+    private var viewFrame = 10
+    private var tag = 0
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        initMethods()
-
-    }
-
-    // MARK: - Private methods
-    @objc private func imageTappedAction(tapGestureRecognizer: UITapGestureRecognizer) {
-        switch tapGestureRecognizer.view?.tag {
-        case 0:
-            productInfo(nameProduct: Constants.blackCase, imageProduct: Constants.blackImage)
-        default:
-            break
-        }
-    }
-
-    private func productInfo(nameProduct: String, imageProduct: String) {
-        let productVC = ProductViewController()
-        productVC.productName = nameProduct
-        productVC.productImageName = imageProduct
-
-        navigationController?.pushViewController(productVC, animated: false)
-    }
-
-    private func initMethods() {
         setupView()
-
-        createGrayLine(frame: CGRect(x: 5, y: 540, width: 385, height: 1))
-        createGrayLine(frame: CGRect(x: 5, y: 590, width: 385, height: 1))
-        createGrayLine(frame: CGRect(x: 5, y: 640, width: 385, height: 1))
-
-        createMagnifyingGlassImageView(frame: CGRect(x: 5, y: 505, width: 23, height: 23))
-        createMagnifyingGlassImageView(frame: CGRect(x: 5, y: 555, width: 23, height: 23))
-        createMagnifyingGlassImageView(frame: CGRect(x: 5, y: 605, width: 23, height: 23))
-        createMagnifyingGlassImageView(frame: CGRect(x: 5, y: 655, width: 23, height: 23))
-
-        createProductText(text: Constants.airpods, frame: CGRect(x: 40, y: 490, width: 140, height: 50))
-        createProductText(text: Constants.appleCare, frame: CGRect(x: 40, y: 540, width: 140, height: 50))
-        createProductText(text: Constants.beats, frame: CGRect(x: 40, y: 590, width: 140, height: 50))
-        createProductText(text: Constants.compare, frame: CGRect(x: 40, y: 640, width: 300, height: 50))
-
-        createProduct(text: Constants.blackCase,
-                      imageName: Constants.blackImage,
-                      frameOfFirstImage: CGRect(x: 20, y: 290, width: 100, height: 75),
-                      frameOfSecondImage: CGRect(x: 5, y: 275, width: 130, height: 160),
-                      tag: 0, frameOfLabel: CGRect(x: 12, y: 358, width: 120, height: 90)
-        )
-        createProduct(text: Constants.watch, imageName: Constants.strapImage,
-                      frameOfFirstImage: CGRect(x: 178, y: 280, width: 100, height: 90),
-                      frameOfSecondImage: CGRect(x: 160, y: 275, width: 130, height: 160),
-                      tag: 1, frameOfLabel: CGRect(x: 168, y: 353, width: 120, height: 100)
-        )
-        createProduct(text: Constants.brownCase,
-                      imageName: Constants.brownCaseImg,
-                      frameOfFirstImage: CGRect(x: 330, y: 294, width: 100, height: 90),
-                      frameOfSecondImage: CGRect(x: 315, y: 275, width: 130, height: 160),
-                      tag: 2, frameOfLabel: CGRect(x: 320, y: 353, width: 120, height: 100)
-        )
     }
-
-    private func createMagnifyingGlassImageView(frame: CGRect) {
-        let imageView = UIImageView(image: UIImage(systemName: Constants.magnifyingglass))
-        imageView.tintColor = UIColor(red: 0.5882, green: 0.5882, blue: 0.5882, alpha: 1.0)
-        imageView.frame = frame
-
-        view.addSubview(imageView)
-    }
-
-    private func createProduct(text: String,
-                               imageName: String,
-                               frameOfFirstImage: CGRect,
-                               frameOfSecondImage: CGRect,
-                               tag: Int,
-                               frameOfLabel: CGRect
-    ) {
-        let imageView = UIImageView()
-        imageView.frame = frameOfSecondImage
-        imageView.tag = tag
-        if tag == 0 {
-            let tapGestureRecognizer = UITapGestureRecognizer(
-                target: self, action: #selector(imageTappedAction(tapGestureRecognizer:))
-            )
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGestureRecognizer)
-
-        }
-
-        imageView.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.12, alpha: 1.00)
-        imageView.layer.cornerRadius = 10
-
-        let mainImageView = UIImageView(image: UIImage(named: imageName))
-        mainImageView.frame = frameOfFirstImage
-
-        let label = UILabel()
-        label.frame = frameOfLabel
-        label.text = text
-        label.font = .systemFont(ofSize: 12)
-        label.numberOfLines = 0
-        label.textColor = .white
-
-        view.addSubview(imageView)
-        view.addSubview(mainImageView)
-        view.addSubview(label)
-    }
-
-    private func createGrayLine(frame: CGRect) {
-        let lineView = UIView()
-        lineView.frame = frame
-        lineView.setUnderLine()
-
-        view.addSubview(lineView)
-    }
-
-    private func createProductText(text: String, frame: CGRect) {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20)
-        label.frame = frame
-        label.textColor = .white
-        label.text = text
-
-        view.addSubview(label)
-    }
+    // MARK: - Private method
 
     private func setupView() {
         view.addSubview(searchLabel)
-        view.addSubview(searchTextField)
-        view.addSubview(recentlyLabel)
-        view.addSubview(clearButton)
-        view.addSubview(variantsLabel)
+        view.addSubview(searchBar)
+        view.addSubview(recentlyViewedLabel)
+        view.addSubview(cleanButton)
+        view.addSubview(requestOptionsLabel)
+        view.addSubview(airPodsSearchView)
+        createAirPodsSearchView()
+        view.addSubview(appleCareSearchView)
+        createAppleCareSearchView()
+        view.addSubview(beatsSearchView)
+        createBeatsSearchView()
+        view.addSubview(iPhoneSearchView)
+        createIPhoneSearchView()
+        createScrollView()
+        addView()
 
-        view.backgroundColor = UIColor(red: 0.00, green: 0.00, blue: 0.00, alpha: 1.00)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-}
- // Extension UIView
-extension UIView {
-    func setUnderLine() {
-        let border = CALayer()
-        let width = CGFloat(0.5)
-        border.borderColor = UIColor.darkGray.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width,
-                              width: self.frame.size.width - 10,
-                              height: self.frame.size.height)
-        border.borderWidth = width
-        layer.addSublayer(border)
-        layer.masksToBounds = true
+    private func createScrollView() {
+        let scrolViewRect = CGRect(x: 0, y: 240, width: view.bounds.width + 300, height: 210)
+        productScrollView.contentSize = CGSize(width: scrolViewRect.size.width, height: 200)
+        productScrollView.contentMode = .scaleAspectFit
+        view.addSubview(productScrollView)
+    }
+
+    private func createProductView(name: String, imageName: String, tag: Int ) {
+        let productView = UIView()
+        productView.backgroundColor = UIColor(named: Color.viewBacgrounColor)
+        productView.frame = CGRect(x: viewFrame, y: 0, width: 150, height: 200)
+        productView.layer.cornerRadius = 15
+
+        let label = UILabel()
+        label.text = name
+        label.textColor = UIColor(named: Color.textColor)
+        label.numberOfLines = 3
+        label.font = .boldSystemFont(ofSize: 13)
+        label.frame = CGRect(x: 13, y: 120, width: 130, height: 80)
+
+        let productImageView = UIImageView()
+        let productImage = UIImage(named: imageName)
+        productImageView.contentMode = .scaleAspectFit
+        productImageView.image = productImage
+        productImageView.frame = CGRect(x: 23, y: 30, width: 100, height: 100)
+
+        productView.addSubview(productImageView)
+        productView.addSubview(label)
+        productView.tag = tag
+        productView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        viewFrame += 175
+        productScrollView.addSubview(productView)
+    }
+
+    private func addView() {
+        for item in products {
+            createProductView(name: item.name, imageName: item.imageName.first ?? "", tag: tag)
+            tag += 1
+        }
+    }
+
+    private func createAirPodsSearchView() {
+        airPodsSearchView.addSubview(airPodsLabel)
+        airPodsSearchView.addSubview(glassForAirPodsButton)
+    }
+
+    private func createAppleCareSearchView() {
+        appleCareSearchView.addSubview(appleCareLabel)
+        appleCareSearchView.addSubview(glassForAppleCareButton)
+    }
+
+    private func createBeatsSearchView() {
+        beatsSearchView.addSubview(beatsLabel)
+        beatsSearchView.addSubview(glassBeatsButton)
+    }
+
+    private func createIPhoneSearchView() {
+        iPhoneSearchView.addSubview(iPhoneLabel)
+        iPhoneSearchView.addSubview(glassIPhoneButton)
+    }
+
+    @objc private func handleTap(param: UIGestureRecognizer) {
+        let productViewController = ProductViewController()
+        guard let tag = param.view?.tag else { return }
+        productViewController.product = products[tag]
+
+        navigationController?.pushViewController(productViewController, animated: true)
     }
 }
