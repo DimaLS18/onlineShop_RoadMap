@@ -215,7 +215,7 @@ final class ProductViewController: UIViewController {
         result.isUserInteractionEnabled = true
         result.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                            action: #selector(
-                                                            presentWKViewController)))
+                                                            presentWKViewControllerAction)))
         return result
     }
     private func gradientColorGray() {
@@ -242,7 +242,7 @@ final class ProductViewController: UIViewController {
             grayColorIsSelectedButton.isHidden = false
         }
     }
-    @objc private func presentWKViewController() {
+    @objc private func presentWKViewControllerAction() {
         let restoreWKViewController = WKViewController()
         restoreWKViewController.productURL = product?.link ?? ""
         restoreWKViewController.modalPresentationStyle = .formSheet

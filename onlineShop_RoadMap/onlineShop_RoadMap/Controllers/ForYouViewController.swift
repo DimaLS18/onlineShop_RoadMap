@@ -158,14 +158,14 @@ final class ForYouViewController: UIViewController {
         return view
     }()
     private let progressView: UIProgressView = {
-             let progressView = UIProgressView()
-             progressView.frame = CGRect(x: 10, y: 115, width: 340, height: 0)
-             progressView.progressViewStyle = .default
-            progressView.setProgress(0.5, animated: false)
-            progressView.progressTintColor = .systemGreen
-            progressView.layer.transform = CATransform3DMakeScale(1, 1.7, 0)
-             return progressView
-         }()
+        let progressView = UIProgressView()
+        progressView.frame = CGRect(x: 10, y: 115, width: 340, height: 0)
+        progressView.progressViewStyle = .default
+        progressView.setProgress(0.5, animated: false)
+        progressView.progressTintColor = .systemGreen
+        progressView.layer.transform = CATransform3DMakeScale(1, 1.7, 0)
+        return progressView
+    }()
 
     private let seporatorTitleView: UIView = {
         let view = UIView()
@@ -219,13 +219,13 @@ final class ForYouViewController: UIViewController {
 
     }
     private func addLabelsOnCintainerView() {
-             var numberX: CGFloat = 10
+        var numberX: CGFloat = 10
         for index in Constants.processedText {
-                     let firstLabel = createLabels(numberX: numberX, text: index)
-                     continerView.addSubview(firstLabel)
-                     numberX += 133
-                 }
-             }
+            let firstLabel = createLabels(numberX: numberX, text: index)
+            continerView.addSubview(firstLabel)
+            numberX += 133
+        }
+    }
     private func setNavigationConfiguration() {
              view.backgroundColor = .white
              navigationController?.navigationBar.prefersLargeTitles = true

@@ -9,8 +9,12 @@ import UIKit
 import WebKit
 
 /// контроллер веб страницы
-@available(iOS 14.0, *)
 class WKViewController: UIViewController {
+    // MARK: - Constants
+    private enum Constants {
+        static let priceList = "priceList"
+        static let pdf = "pdf"
+    }
     // MARK: - Visual Component
     private let backButtonItem = UIBarButtonItem(systemItem: .rewind)
     private let forwardButtonItem = UIBarButtonItem(systemItem: .fastForward)
@@ -33,7 +37,8 @@ class WKViewController: UIViewController {
     private var webView = WKWebView()
     private let toolBar = UIToolbar()
     private var observer: NSKeyValueObservation?
-    private let progressView = UIProgressView()    // MARK: - Live Cycle
+    private let progressView = UIProgressView()
+    // MARK: - Live Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +91,8 @@ class WKViewController: UIViewController {
         webView.goForward()
     }
     @objc private func loadPdfAction() {
-        guard let url = Bundle.main.url(forResource: "priceList",
-                                        withExtension: "pdf")
+        guard let url = Bundle.main.url(forResource: Constants.priceList,
+                                        withExtension: Constants.pdf)
         else { return }
         let urlRequest = URLRequest(url: url)
 
