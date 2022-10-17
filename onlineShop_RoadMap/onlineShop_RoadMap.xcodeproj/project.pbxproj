@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D51306028F6C67700A47938 /* WKViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D51305F28F6C67700A47938 /* WKViewClient.swift */; };
+		2D51306228F6CEBE00A47938 /* priceList.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D51306128F6CEBE00A47938 /* priceList.pdf */; };
 		2D82ABE928F435FF00D9B949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABE828F435FF00D9B949 /* AppDelegate.swift */; };
 		2D82ABEB28F435FF00D9B949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */; };
 		2D82ABF228F435FF00D9B949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D82ABF128F435FF00D9B949 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D51305F28F6C67700A47938 /* WKViewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewClient.swift; sourceTree = "<group>"; };
+		2D51306128F6CEBE00A47938 /* priceList.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = priceList.pdf; sourceTree = "<group>"; };
 		2D82ABE528F435FF00D9B949 /* onlineShop_RoadMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onlineShop_RoadMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D82ABE828F435FF00D9B949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				2D82ABFD28F437CD00D9B949 /* Controllers */,
 				2D82ABE828F435FF00D9B949 /* AppDelegate.swift */,
 				2D82ABEA28F435FF00D9B949 /* SceneDelegate.swift */,
+				2D51306128F6CEBE00A47938 /* priceList.pdf */,
 				2DED0EF328F6905600111A73 /* ColorAssets.xcassets */,
 				2D82ABF128F435FF00D9B949 /* Assets.xcassets */,
 				2D82ABF328F435FF00D9B949 /* LaunchScreen.storyboard */,
@@ -91,6 +96,7 @@
 				2D82AC0128F437E500D9B949 /* MainTabBarController.swift */,
 				2D82AC0228F437E500D9B949 /* ProductViewController.swift */,
 				2D82ABFF28F437E500D9B949 /* SearchViewController.swift */,
+				2D51305F28F6C67700A47938 /* WKViewClient.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D51306228F6CEBE00A47938 /* priceList.pdf in Resources */,
 				2D82ABF528F435FF00D9B949 /* LaunchScreen.storyboard in Resources */,
 				2DED0EF428F6905600111A73 /* ColorAssets.xcassets in Resources */,
 				2D82ABF228F435FF00D9B949 /* Assets.xcassets in Resources */,
@@ -204,6 +211,7 @@
 				2DED0EF628F6905F00111A73 /* ColorEnum.swift in Sources */,
 				2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */,
 				2D82AC0428F437E500D9B949 /* BuyViewController.swift in Sources */,
+				2D51306028F6C67700A47938 /* WKViewClient.swift in Sources */,
 				2D82ABE928F435FF00D9B949 /* AppDelegate.swift in Sources */,
 				2D82AC0828F437E500D9B949 /* ProductViewController.swift in Sources */,
 				2D82ABEB28F435FF00D9B949 /* SceneDelegate.swift in Sources */,
@@ -352,7 +360,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +388,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

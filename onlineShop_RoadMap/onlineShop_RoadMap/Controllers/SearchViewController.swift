@@ -25,6 +25,14 @@ final class SearchViewController: UIViewController {
         static let brownCasePrice = "4 990.00 руб"
         static let watchbandPrice = "1 200.00 руб"
         static let iPhonePrice = "89 900.00 руб"
+        static let balckCaseLink = "https://re-store.ru/catalog/INMB100649-BLK/"
+        static let brownCaseLink = "https://re-store.ru/catalog/PA15SASA5450/"
+        static let watchLink = "https://re-store.ru/catalog/MJ4W3ZM-A/"
+        static let iPhoneLabel = "https://re-store.ru/catalog/10114MAX256PPLE/"
+        static let iPhoneFotto = ["iphone14_pro", "iphone14_pro1", "iphone14_pro2"]
+        static let blackCaseFotto = ["caseBlack", "caseBlack2", "caseBlack3"]
+        static let brownCaseFotto = ["caseBrown", "caseBrown2", "caseBrown3"]
+        static let watchFoto = ["clock", "clock1"]
     }
     // MARK: - Visual Component
     private let searchLabel: UILabel = {
@@ -177,18 +185,22 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Private property
 
-    var products = [Product(name: "Чехол Incase Flat для MacBook Pro 16 дюймов",
-                            imageName: ["caseBlack", "caseBlack2", "caseBlack3"],
-                            price: "3 990.00 руб"),
-                    Product(name: "Кожаный чехол для MacBook Pro 16 дюймов, коричневый",
-                            imageName: ["caseBrown", "caseBrown2", "caseBrown3"],
-                            price: "4 990.00 руб"),
-                    Product(name: "Спортивный ремешок Black Unity",
-                            imageName: ["clock", "clock1"],
-                            price: "1 200.00 руб"),
-                    Product(name: "Iphone 14 pro ",
-                            imageName: ["iphone14_pro", "iphone14_pro1", "iphone14_pro2"],
-                            price: "99 900.00 руб") ]
+    var products = [Product(name: Constants.blackCaseLabelText,
+                            imageName: Constants.blackCaseFotto,
+                            price: Constants.blackCasePrice,
+                            link: Constants.balckCaseLink),
+                    Product(name: Constants.brownCaseLabelText,
+                            imageName: Constants.brownCaseFotto,
+                            price: Constants.brownCasePrice,
+                            link: Constants.brownCaseLink),
+                    Product(name: Constants.watchbandLabelText,
+                            imageName: Constants.watchFoto,
+                            price: Constants.watchbandPrice,
+                            link: Constants.watchLink ),
+                    Product(name: Constants.iphoneLabelText,
+                            imageName: Constants.iPhoneFotto,
+                            price: Constants.iPhonePrice,
+                            link: Constants.iPhonePrice) ]
 
     private var viewFrame = 10
     private var tag = 0

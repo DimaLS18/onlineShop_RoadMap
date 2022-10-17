@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ProductViewController: UIViewController {
+final class ProductViewController: UIViewController {
     // MARK: - Constants
     private enum Constants {
-        static let compatibilityLabelText: NSString = "Совместимо с MacBook Air — Александр"
+        static let compatibilityLabelText: NSString = "Совместимо с MacBook  — Дмитрий"
         static let addToBusketButtonText = "Добавить в корзину"
         static let orderInfoLabelText: NSString = """
           Заказ сегодня в течении дня, доставка:
-          Чт 25 Фев - Бесплатно
-          Варианты доставки для местоположения 115533
+          Чт 13 Окт - Бесплатно
+          Варианты доставки для местоположения 142500
   """
     }
     // MARK: - Visual Components
@@ -212,6 +212,10 @@ class ProductViewController: UIViewController {
         let result = UIImageView(frame: paramFrame)
         result.contentMode = .scaleAspectFit
         result.image = UIImage(named: paramImage)
+        result.isUserInteractionEnabled = true
+        result.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                           action: #selector(
+                                                            presentWKViewControllerAction)))
         return result
     }
     private func gradientColorGray() {
@@ -237,5 +241,11 @@ class ProductViewController: UIViewController {
             lightGrayColorIsSelectedButton.isHidden = true
             grayColorIsSelectedButton.isHidden = false
         }
+    }
+    @objc private func presentWKViewControllerAction() {
+        let restoreWKViewController = WKViewController()
+        restoreWKViewController.productURL = product?.link ?? ""
+        restoreWKViewController.modalPresentationStyle = .formSheet
+        present(restoreWKViewController, animated: true)
     }
 }
