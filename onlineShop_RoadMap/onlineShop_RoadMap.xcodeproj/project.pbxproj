@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D4029FD28FD71870017CE3B /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4029FC28FD71870017CE3B /* OnboardingPageViewController.swift */; };
+		2D4029FF28FD71BF0017CE3B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4029FE28FD71BF0017CE3B /* OnboardingViewController.swift */; };
+		2D402A0128FD721F0017CE3B /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D402A0028FD721F0017CE3B /* UserStorage.swift */; };
 		2D51306028F6C67700A47938 /* WKViewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D51305F28F6C67700A47938 /* WKViewClient.swift */; };
 		2D51306228F6CEBE00A47938 /* priceList.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2D51306128F6CEBE00A47938 /* priceList.pdf */; };
 		2D82ABE928F435FF00D9B949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D82ABE828F435FF00D9B949 /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4029FC28FD71870017CE3B /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		2D4029FE28FD71BF0017CE3B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2D402A0028FD721F0017CE3B /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		2D51305F28F6C67700A47938 /* WKViewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKViewClient.swift; sourceTree = "<group>"; };
 		2D51306128F6CEBE00A47938 /* priceList.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = priceList.pdf; sourceTree = "<group>"; };
 		2D82ABE528F435FF00D9B949 /* onlineShop_RoadMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onlineShop_RoadMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D4029FB28FD71670017CE3B /* Onbording */ = {
+			isa = PBXGroup;
+			children = (
+				2D4029FC28FD71870017CE3B /* OnboardingPageViewController.swift */,
+				2D4029FE28FD71BF0017CE3B /* OnboardingViewController.swift */,
+			);
+			path = Onbording;
+			sourceTree = "<group>";
+		};
+		2D402A0228FD72330017CE3B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2D82ABDC28F435FE00D9B949 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +96,8 @@
 		2D82ABE728F435FF00D9B949 /* onlineShop_RoadMap */ = {
 			isa = PBXGroup;
 			children = (
+				2D402A0228FD72330017CE3B /* Extension */,
+				2D4029FB28FD71670017CE3B /* Onbording */,
 				2DED0EF728F691C700111A73 /* Model */,
 				2D82ABFD28F437CD00D9B949 /* Controllers */,
 				2D82ABE828F435FF00D9B949 /* AppDelegate.swift */,
@@ -106,6 +130,7 @@
 			children = (
 				2DED0EF128F68CFF00111A73 /* Product.swift */,
 				2DED0EF528F6905F00111A73 /* ColorEnum.swift */,
+				2D402A0028FD721F0017CE3B /* UserStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,10 +229,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4029FF28FD71BF0017CE3B /* OnboardingViewController.swift in Sources */,
 				2D82AC0928F437E500D9B949 /* BasketViewController.swift in Sources */,
 				2D82AC0528F437E500D9B949 /* SearchViewController.swift in Sources */,
 				2DED0EF228F68CFF00111A73 /* Product.swift in Sources */,
+				2D402A0128FD721F0017CE3B /* UserStorage.swift in Sources */,
 				2D82AC0628F437E500D9B949 /* ForYouViewController.swift in Sources */,
+				2D4029FD28FD71870017CE3B /* OnboardingPageViewController.swift in Sources */,
 				2DED0EF628F6905F00111A73 /* ColorEnum.swift in Sources */,
 				2D82AC0728F437E500D9B949 /* MainTabBarController.swift in Sources */,
 				2D82AC0428F437E500D9B949 /* BuyViewController.swift in Sources */,
